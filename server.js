@@ -2,15 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Load employees
-app.get("/employees", (req, res) => {
+app.get("https://omar-zena.vercel.app/employees", (req, res) => {
   fs.readFile("employees.json", "utf8", (err, data) => {
     if (err) {
       res.status(500).send("Error reading employees data");

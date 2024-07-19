@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const spinner = document.querySelector(".spinner-border");
     spinner.style.display = "block"; // Show spinner
 
-    fetch("/employees")
+    fetch("https://omar-zena.vercel.app/employees")
       .then((response) => response.json())
       .then((employees) => {
         displayEmployeeSalaries(employees);
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateEmployeeOvertime(name, newOvertimeHours, newOvertimeRate) {
-    fetch("/employees", {
+    fetch("https://omar-zena.vercel.app/employees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
