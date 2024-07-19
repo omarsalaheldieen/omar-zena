@@ -46,5 +46,11 @@
     "salary": 80000,
     "overtimeHours": 5,
     "overtimeRate": 200
+  },
+  {
+    "name": "هشام",
+    "salary": 1000,
+    "overtimeHours": 0,
+    "overtimeRate": 0
   }
 ]
