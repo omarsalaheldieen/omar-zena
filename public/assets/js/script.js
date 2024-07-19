@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadEmployees() {
     const spinner = document.querySelector(".spinner-border");
     spinner.style.display = "block"; // Show spinner
-  
-    fetch("https://omarsalaheldieen.github.io/employees")  // Change this to your server's URL
+
+    fetch("/employees")
       .then((response) => response.json())
       .then((employees) => {
         displayEmployeeSalaries(employees);
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateEmployeeOvertime(name, newOvertimeHours, newOvertimeRate) {
-    fetch("https://omarsalaheldieen.github.io/employees", {  // Change this to your server's URL
+    fetch("/employees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
